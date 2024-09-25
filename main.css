@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Estamos pegando o index e informando que todo contéudo que ultrapassar o eixo X (horizontal, será cortado da tela)
+
+*/
+html{
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header,
+footer {
+    background-color: #192a56;
+    padding-top: 16px;
+    color: #fff;
+}
+
+/*
+Estamos definindo que o cabeçalho será fixo, para isso precisamos principalmente das duas premeiras regras.
+Após mantemos a extremidade esquerda.
+E por fim definimos que o z-index é 1, pois sem ele no momento em que rolarmos pelo carrossel o header irá sumir, e com essa regra ele mantém a sobreposição ao carrossel.
+*/
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/*Criando um sistema de hierarquia
+Estamos explicando para o CSS que no header, temos uma classe chamada "Container, que é sua classe filha
+e nos queremos mexer apenas neste container, e assim ela não irá interferir no container dentro do parâmetro "nav" com a classe container. "
+
+e separando-os de forma equivalente, utilizando toda largura disponibilizada.
+Centralizando os itens ao centro horizontalmente
+criando um espaçamento interno da parte inferior de 16px
+*/
+header >.container,
+footer >.container {
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+}
+
+/*Deixando o display da lista ordenada oculto para criar o efeito de seleção de menu*/
+nav {
+    background-color: #575fcf;
+    padding: 16px 0;
+    display: none;
+}
+
+nav li{
+    list-style: none;
+    display: inline;
+    margin-right: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav li a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-hamburguer {
+    width: 32px;
+    cursor: pointer;
+}
+
+/*Mexendo na propriedade do span, e definindo-as
+Ele terá um comprimento de 2px para ser similar a finura de uma barra
+Ocupará 100% do está definido logo acima.
+display: block - aqui a linha irá ocupar toda a largura, e assim criará uma nova linha em baixo
+Quando definimos o margin-bottom, conseguimos visualizar a separação das 3 linhas
+*/
+.menu-hamburguer span {
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.container-flex {
+    display: flex;
+}
+
+#Sobre-a-loja img {
+    max-width: 400px;
+    margin-right: 24px;
+}
+
+section {
+    padding: 40px 0;
+}
+
+section h2 {
+    margin-bottom: 16px;
+}
+
+.lista-veiculos {
+    flex-wrap: wrap;
+}
+
+/*Estamos definindo que cada linha/item ocupará 30% de 100%, o que na atual situação temos 3 imagens o que somaria 90%*/
+.lista-veiculos li{
+    list-style: none;
+    max-width: 30%;
+    margin-bottom: 24px;
+
+}
+
+/*Ocupando 100% do espaço definido anteriormente para o li*/
+.lista-veiculos li img {
+    max-width: 100%;
+}
+
+.lista-veiculos h3 {
+    margin: 16px 0;
+}
+
+/*Iremos aplicar margens laterais, esquerda e direita, onde cada uma terá 5% totalizando 10% para compensar o faltante*/
+.item-central {
+    margin: 0 5%;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    background-color: #119759;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+}
+
+/*Tivemos que alterar a propriedade do display do "li" para block pois naturalmente ela é uma propriedade inline,
+o que não aplicaria a margem definida*/
+.price {
+    display: block;
+    margin: 16px 0;
+}
+
+.price del {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.form-campo {
+    margin-bottom: 16px;
+}
+
+.form-campo label {
+    font-weight: bold;
+    /*Fazendo os campos a frente do label, descerem para a linha abaixo*/
+    display: block;
+}
+
+.form-campo input,
+.form-campo textarea {
+    width: 100%;
+    padding: 8px;
+    display: block;
+}
+
+.form-campo textarea {
+    resize: none;
+    height: 120px;
+}
+
+form {
+    max-width: 360px;
+}
+
+form button{
+    max-width: 120px;
+}
+
+footer li {
+    list-style: none;
+    margin-left: 16px;
+}
+
+footer li img {
+    height: 32px;
+}
